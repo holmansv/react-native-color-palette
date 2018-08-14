@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {TouchableOpacity, View, Text} from 'react-native';
+import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
 import FAIcon from 'react-native-vector-icons/FontAwesome'
 
 export default class ColorPalette extends React.Component {
