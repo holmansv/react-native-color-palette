@@ -13,6 +13,11 @@ Install the color picker
 ```
 npm install react-native-color-palette --save
 ```
+
+**NOTE: THIS PACKAGE REQUIRES REACT-NATIVE-VECTOR-ICONS TO BE INSTALLED.**
+
+**If you do not have it, please install it using the instructions they provide: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation)**
+
 And use it in your application
 ```javascript
 import ColorPalette from 'react-native-color-palette'
