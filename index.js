@@ -31,7 +31,7 @@ export default class ColorPalette extends React.Component {
   }
 
   onChange(color) {
-    this.setState({color}, this.props.onChange(color))
+    this.setState({color}, () => this.props.onChange(color))
   }
   render() {
     return (
