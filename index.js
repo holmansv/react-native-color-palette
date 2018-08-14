@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
+import {TouchableOpacity, View, Text} from 'react-native';
 import FAIcon from 'react-native-vector-icons/FontAwesome'
 
 export default class ColorPalette extends React.Component {
@@ -10,20 +10,12 @@ export default class ColorPalette extends React.Component {
       color: this.props.defaultColor || this.props.value || this.props.colors[0]
     };
     this.onChange = this.onChange.bind(this);
-    this.setColor = this.setColor.bind(this);
-  }
-
-  setColor(props) {
-    this.setState({color: props.value})
-  }
-
-  componentDidMount() {
-    this.setColor(this.props)
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.value !== this.props.value)
-      this.setColor(nextProps)
+    if (nextProps.value !== this.props.value) {
+      this.setState({color: nextProps.value})
+    }
   }
 
   getContrastColor(hex) {
@@ -31,26 +23,49 @@ export default class ColorPalette extends React.Component {
   }
 
   onChange(color) {
-    this.setState({color}, () => this.props.onChange(color))
+    this.setState({color: color}, () => this.props.onChange(color))
   }
   render() {
+    const colorPaletteStyles = {
+      colorContainer: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        justifyContent: 'center'
+      },
+      colorOption: {
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 30,
+        height: 30,
+        marginHorizontal: 10,
+        marginVertical: 10,
+        borderRadius: 15,
+        elevation: 5,
+        shadowOffset: {width: 2, height: 2,},
+        shadowColor: 'black',
+        shadowOpacity: .25,
+      }
+    };
     return (
       <View style={{flex: 1}}>
         <Text>{this.props.title}</Text>
-        <View style={{...styles.colorContainer, ...this.props.paletteStyles}}>
+        <View style={{...colorPaletteStyles.colorContainer, ...this.props.paletteStyles}}>
           {this.props.colors.map((color) => {
             return (
               <TouchableOpacity
-                style={{...styles.colorOption, backgroundColor: color}}
+                style={{...colorPaletteStyles.colorOption, backgroundColor: color}}
                 onPress={() => this.onChange(color)}
                 key={color}
               >
                 {this.state.color === color &&
-                  <FAIcon
-                    name={'check-circle-o'}
-                    size={25}
-                    color={this.getContrastColor(color)}
-                  />
+                <FAIcon
+                  name={'check-circle-o'}
+                  size={25}
+                  color={this.getContrastColor(color)}
+                />
                 }
               </TouchableOpacity>
             );
@@ -60,30 +75,6 @@ export default class ColorPalette extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  colorContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  colorOption: {
-    borderWidth: 1,
-    borderColor: 'rgba(0,0,0,0.2)',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: 30,
-    height: 30,
-    marginHorizontal: 10,
-    marginVertical: 10,
-    borderRadius: 15,
-    elevation: 5,
-    shadowOffset: {width: 2, height: 2,},
-    shadowColor: 'black',
-    shadowOpacity: .25,
-  }
-});
 ColorPalette.defaultProps = {
   colors: [
     '#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9', '#3498DB',
