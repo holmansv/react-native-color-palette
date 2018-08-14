@@ -1,0 +1,24 @@
+{
+  "name": "react-native-color-palette",
+  "version": "1.0.0",
+  "description": "A react native module for simple hex color selection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holmansv/react-native-color-palette.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "colors"
+  ],
+  "author": "Holman Strategic Ventures",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holmansv/react-native-color-palette/issues"
+  },
+  "homepage": "https://github.com/holmansv/react-native-color-palette#readme",
+}
