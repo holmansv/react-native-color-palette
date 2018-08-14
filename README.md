@@ -1,4 +1,4 @@
-#React Native Color Palette.
+# React Native Color Palette.
 
 A react native module for simple hex color selection
 
