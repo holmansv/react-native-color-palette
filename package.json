@@ -1,6 +1,6 @@
 {
   "name": "react-native-color-palette",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react native module for simple hex color selection",
   "main": "index.js",
   "scripts": {
