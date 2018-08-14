@@ -89,7 +89,7 @@ ColorPalette.defaultProps = {
   paletteStyles: {}
 };
 
-ColorPalette.PropTypes = {
+ColorPalette.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string,
   onChange: PropTypes.func,
