@@ -14,11 +14,6 @@ Install the color picker
 npm install react-native-color-palette --save
 ```
 
-**NOTE: THIS PACKAGE REQUIRES REACT-NATIVE-VECTOR-ICONS TO BE INSTALLED.**
-
-**If you do not have it, please install it using the instructions they provide: [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation)**
-
-And use it in your application
 ```javascript
 import ColorPalette from 'react-native-color-palette'
 
@@ -28,6 +23,10 @@ const UncontrolledColorPicker = () => (
     defaultColor={'#C0392B'}
     colors={['#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9']}
     title={"Uncontrolled Color Palette:"}
+    icon={
+      <Text>✔</Text>︎
+      // Icon can just be text or ASCII
+    }
   />
 )
 
@@ -38,6 +37,10 @@ const ControlledColorPicker = () => (
     value={selectedColor}
     colors={['#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9']}
     title={"Controlled Color Palette:"}
+    icon={
+      <Icon name={'check-circle-o'} size={25} color={'black'} />
+      // React-Native-Vector-Icons Example
+    }
   />
 )
 ```
@@ -49,13 +52,11 @@ Due to its flexbox design, Color Palette will use space you provide!
 Color Palette accepts properties below.
 
 | Property | Type | Note |
-|--------------------|------------|--------|
-|`colors`            |`Array`     |Array of hex color strings for rendering. ex) ['#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9']|
-|`defaultColor`      |`String`    |Defines initial selected color in uncontrolled component.|
-|`value`             |`String`    |Defines selected color in controlled component.|
-|`paletteStyles`     |`Style`     |Styles passed to color palette container|
-|`onChange`          |`Function`  |Callback with color (HEX string) as argument called when user confirms color selection.|
-|`title`             |`String`    |Text to display at the top of the palette.|
-
-## Thanks
-We have worked in the open source community for a long time, and look forward to contributing more in the future!
+|--------------------|------------------|--------|
+|`colors`            |`Array`           |Array of hex color strings for rendering. ex) ['#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9']|
+|`defaultColor`      |`String`          |Defines initial selected color in uncontrolled component.|
+|`value`             |`String`          |Defines selected color in controlled component.|
+|`paletteStyles`     |`Style`           |Styles passed to color palette container|
+|`onChange`          |`Function`        |Callback with color (HEX string) as argument called when user confirms color selection.|
+|`title`             |`String`          |Text to display at the top of the palette.|
+|`icon`              |`Text` or `Icon`  |Selector Text or Icon to be displayed in place of checkmark.

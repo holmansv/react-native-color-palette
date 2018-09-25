@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/holmansv/react-native-color-palette/issues"
   },
-  "homepage": "https://github.com/holmansv/react-native-color-palette#readme"
+  "homepage": "https://github.com/holmansv/react-native-color-palette#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "react": "^16.5.2",
+    "react-native": "^0.57.1"
+  }
 }
