@@ -9,7 +9,7 @@ export default class ColorPalette extends Component {
 
   constructor(props) {
     super(props);
-    const { defaultColor, value, colors } = this.props;
+    const { defaultColor, value, colors } = props;
     this.state = {
       color: defaultColor || value || colors[0]
     };
@@ -53,7 +53,7 @@ export default class ColorPalette extends Component {
     return (
       <View style={styles.container}>
         <Text>{title}</Text>
-        <View style={[styles.colorContainer, ...paletteStyles]}>
+        <View style={[styles.colorContainer, {...paletteStyles}]}>
           {colors.map((c) => this.renderColorOption(c))}
         </View>
       </View>
