@@ -44,7 +44,7 @@ const ControlledColorPicker = () => (
   />
 )
 ```
-Due to its flexbox design, Color Palette will use space you provide!
+Due to its Flexbox design, Color Palette will use the space you provide!
 
 ## API
 ### Props
