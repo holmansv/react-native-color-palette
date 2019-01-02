@@ -2,7 +2,7 @@
   "name": "react-native-color-palette",
   "version": "2.0.1",
   "description": "A react native module for simple hex color selection",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,10 @@
   "keywords": [
     "react",
     "react-native",
-    "colors"
+    "colors",
+    "color-picker",
+    "color-palette",
+    "palette"
   ],
   "author": "Holman Strategic Ventures",
   "license": "MIT",
@@ -23,7 +26,8 @@
   "homepage": "https://github.com/holmansv/react-native-color-palette#readme",
   "dependencies": {},
   "devDependencies": {
-    "react": "^16.5.2",
-    "react-native": "^0.57.1"
+    "@babel/runtime": "^7.2.0",
+    "react": "^16.6.3",
+    "react-native": "^0.57.8"
   }
 }
