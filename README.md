@@ -60,3 +60,4 @@ Color Palette accepts properties below.
 |`onChange`          |`Function`        |Callback with color (HEX string) as argument called when user confirms color selection.|
 |`title`             |`String`          |Text to display at the top of the palette.|
 |`icon`              |`Text` or `Icon`  |Selector Text or Icon to be displayed in place of checkmark.
+|`scaleToWindow`     |`Bool`            |This will automatically scale the palette to fit 6 per line and will scale up/down for iPads/ iPhones depending on window size
