@@ -36,7 +36,7 @@ export default class ColorPalette extends Component {
     if (icon) {
       return icon;
     }
-    return <Text style={{ color: ColorPalette.getContrastColor(color), fontSize: 60 }} adjustsFontSizeToFit>✔︎</Text>;
+    return <Text style={{ color: ColorPalette.getContrastColor(color), fontSize: 20 }} adjustsFontSizeToFit>✔︎</Text>;
   }
 
   renderColorOption(c) {
