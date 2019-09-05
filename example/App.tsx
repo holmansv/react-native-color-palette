@@ -9,9 +9,11 @@ export default function App() {
       <ColorPalette
         onChange={setSelectedColor}
         value={selectedColor}
-        // colors={['#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9']}
         title={"Controlled Color Palette:"}
       />
+      <View style={{ backgroundColor: selectedColor === '#FFFFFF' ? '#000000' : '#FFFFFF', padding: 10, borderRadius: 5 }}>
+        <Text style={{ color: selectedColor }}>{selectedColor}</Text>
+      </View>
     </View>
   );
 }
