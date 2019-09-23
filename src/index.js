@@ -13,24 +13,21 @@ export default class ColorPalette extends Component {
     super(props);
     const { defaultColor, value, colors } = props;
     this.state = { color: defaultColor || value || colors[0] };
-    this.renderIcon = this.renderIcon.bind(this);
-    this.onColorChange = this.onColorChange.bind(this);
-    this.renderColorOption = this.renderColorOption.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(nextProps) {
     const { value } = this.props;
     if (nextProps.value !== value) {
       this.setState({ color: nextProps.value });
     }
   }
 
-  onColorChange(color) {
+  onColorChange = (color) => {
     const { onChange } = this.props;
     this.setState({ color }, () => onChange(color));
   }
 
-  renderIcon() {
+  renderIcon = () => {
     const { icon } = this.props;
     const { color } = this.state;
     if (icon) {
@@ -39,7 +36,7 @@ export default class ColorPalette extends Component {
     return <Text style={{ color: ColorPalette.getContrastColor(color), fontSize: 20 }} adjustsFontSizeToFit>✔︎</Text>;
   }
 
-  renderColorOption(c) {
+  renderColorOption = (c) => {
     const { color } = this.state;
     const { scaleToWindow } = this.props;
     let scaledWidth = width * .025;
