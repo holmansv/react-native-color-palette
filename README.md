@@ -57,8 +57,9 @@ Color Palette accepts properties below.
 | `colors`        | `Array`          | Array of hex color strings for rendering. ex) ['#C0392B', '#E74C3C', '#9B59B6', '#8E44AD', '#2980B9']                          |
 | `defaultColor`  | `String`         | Defines initial selected color in uncontrolled component.                                                                      |
 | `value`         | `String`         | Defines selected color in controlled component.                                                                                |
-| `paletteStyles` | `Style`          | Styles passed to color palette container                                                                                       |
+| `paletteStyles` | `ViewStyle`      | Styles passed to color palette container                                                                                       |
 | `onChange`      | `Function`       | Callback with color (HEX string) as argument called when user confirms color selection.                                        |
 | `title`         | `String`         | Text to display at the top of the palette.                                                                                     |
+| `titleStyles`   | `TextStyle`      | Inherits the default react-native Text Styles                                                                                  |
 | `icon`          | `Text` or `Icon` | Selector Text or Icon to be displayed in place of checkmark.                                                                   |
 | `scaleToWindow` | `Bool`           | This will automatically scale the palette to fit 6 per line and will scale up/down for iPads/ iPhones depending on window size |
