@@ -16,17 +16,16 @@ const ColorPalette = (props) => {
     titleStyles,
     value,
   } = props;
-  const [color, setColor] = useState(defaultColor || value || colors[0]);
-
+  const [color, setColor] = useState(value || defaultColor);
+  
   useEffect(() => {
-    setColor(value);
-    return () => { };
+    value && setColor(value);
   }, [value]);
 
   const onColorChange = useCallback((color) => {
     setColor(color);
     onChange(color);
-  }, []);
+  }, [onChange]);
 
   return (
     <Fragment>
@@ -39,7 +38,7 @@ const ColorPalette = (props) => {
             icon={icon}
             onColorChange={onColorChange}
             scaleToWindow={scaleToWindow}
-            selectedColor={color}
+            isSelected={value ? value ===c : color ===c}
           />
         ))}
       </View>
