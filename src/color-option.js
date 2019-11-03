@@ -7,7 +7,7 @@ import Icon from './icon';
 const { width } = Dimensions.get('window');
 
 const ColorOption = (props) => {
-  const { icon, color, selectedColor, scaleToWindow, onColorChange } = props;
+  const { icon, color, isSelected, scaleToWindow, onColorChange } = props;
   let scaledWidth = width * .025;
   return (
     <TouchableOpacity
@@ -24,7 +24,7 @@ const ColorOption = (props) => {
         }
       ]}
     >
-      {selectedColor === color && <Icon color={color} icon={icon} />}
+      {isSelected  && <Icon color={color} icon={icon} />}
     </TouchableOpacity>
   );
 }
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 ColorOption.propTypes = {
   icon: PropTypes.node,
   color: PropTypes.string.isRequired,
-  selectedColor: PropTypes.string.isRequired,
+  isSelected: PropTypes.bool.isRequired,
   scaleToWindow: PropTypes.bool.isRequired,
   onColorChange: PropTypes.func.isRequired,
 }
