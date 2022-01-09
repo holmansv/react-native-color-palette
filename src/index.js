@@ -29,8 +29,8 @@ const ColorPalette = (props) => {
 
   return (
     <Fragment>
-      <Text style={[styles.titleStyles, { ...titleStyles }]}>{title}</Text>
-      <View style={[styles.colorContainer, { ...paletteStyles }]}>
+      <Text style={[styles.titleStyles, titleStyles]}>{title}</Text>
+      <View style={[styles.colorContainer, paletteStyles]}>
         {colors.map((c) => (
           <ColorOption
             key={c}
